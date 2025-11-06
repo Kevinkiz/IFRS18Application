@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website with Table</title>
+<style>
+  @media print {
+    #details-textarea {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+  }
+
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+
+    }
+
+   @media print {
+      .textbox {
+        overflow: visible !important;
+        height: auto !important;
+      }
+    }
+  </style>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.15.2/docxtemplater.js"></script>
+  <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+
+<body>
+  <h1>IFRS INTERPRETATION</h1>
+  <form>
+  <td>Name</td>
+           
+<td>
+          <input type="text" id="Name-input" name="FirmName" value="N/A">
+</td>
+      
+
+   
+</tr>
+    <tr>
+ 
+<td>Date</td>
+           
+<td>
+          <input type="date" id="Date/Period" name="Date_Period" value="N/A">
+</td>
+      
+  	<!-- Tab links -->
+	<div class="tab">
+		<button class="tablinks" onclick="openTab(event, 'IFRS1')">IFRS1</button>
+		<button class="tablinks" onclick="openTab(event, 'IFRS17')">IFRS18</button>  
+         </div>
+
+  
+<div id="IFRS17" class="tabcontent" style="display: none; color: blue;">
+  <table>
+
+  <tr>
+  <th>Details</th>
+  <td>
+    <textarea id="details-textarea2" class="textbox" rows="5" cols="40" oninput="checkKeywords()"></textarea>
+ </td>
+</tr>
+
+  <tr>
+    <th>Standard</th>
+     <td>
+    <select>
+         <option value="IFRS1 ">IFRS 1: First-time Adoption of International Financial Reporting Standards</option>
+          <option value="IFRS2">IFRS 2 Share-based Payment</option>
+          <option value="IFRS3">IFRS 3 Business Combinations</option>
+          <option value="IFRS4">IFRS 4 Insurance Contracts</option>
+          <option value="IFRS5">IFRS 5 Non-cash Assets Held for Sale and Discontinued Operations</option>
+          <option value="IFRS6">IFRS 6 Exploration for and Evaluation of Mineral Resources</option>
+          <option value="IFRS7">IFRS 7 Financial Instruments: Disclosures</option>
+          <option value="IFRS8">IFRS 8 Operating Segments</option>
+          <option value="IFRS9">IFRS 9 Financial Instruments</option>
+          <option value="IFRS10">IFRS 10 Consolidated Financial Statements</option>
+          <option value="IFRS11">IFRS 11 Joint Arrangements</option>
+          <option value="IFRS12">IFRS 12 Disclosure of Interests in Other Entities</option>
+          <option value="IFRS13">IFRS 13 Fair Value Measurement</option>
+          <option value="IFRS14">IFRS 14 Regulatory Deferral Accounts</option>
+          <option value="IFRS15">IFRS 15 Revenue from Contracts with Customers</option>
+          <option value="IFRS16">IFRS 16 Leases</option>
+          <option value="IFRS17">IFRS 17 Insurance Contracts</option>
+          <option value="IAS1">IAS 1 Presentation of Financial Statements </option>
+          <option value="IAS2">IAS 2 Inventories</option>
+          <option value="IAS7">IAS 7 Statement of Cash Flows</option>
+          <option value="IAS8">IAS 8 Accounting Policies, Changes in Accounting Estimates and Errors</option>
+          <option value="IAS10">IAS 10 Events after the Reporting Period</option>
+          <option value="IAS12">IAS 12 Income Taxes</option>
+          <option value="IAS16">IAS 16 Property, Plant and Equipment</option>
+          <option value="IAS19">IAS 19 Employee Benefits</option>
+          <option value="IAS20">IAS 20 Accounting for Government Grants and Disclosure of Government Assistance</option>
+          <option value="IAS21">IAS 21 The Effects of Changes in Foreign Exchange Rates</option>
+          <option value="IAS23">IAS 23 Borrowing Costs</option>
+          <option value="IAS24">IAS 24 Related Party Disclosures</option>
+          <option value="IAS26">IAS 26 Accounting and Reporting by Retirement Benefit Plans</option>
+          <option value="IAS27">IAS 27 Separate Financial Statements</option>
+          <option value="IAS28">IAS 28 Investments in Associates and Joint Ventures</option>
+          <option value="IAS29">IAS 29 Financial Reporting in Hyperinflationary Economies</option>
+          <option value="IAS32">IAS 32 Financial Instruments: Presentation</option>
+          <option value="IAS33">IAS 33 Earnings per Share</option>
+          <option value="IAS34">IAS 34 Interim Financial Reporting</option>
+          <option value="IAS36">IAS 36 Impairment of Assets</option>
+          <option value="IAS37">IAS 37 Provisions, Contingent Liabilities and Contingent Assets</option>
+          <option value="IAS38">IAS 38 Intangible Assets</option>
+          <option value="IAS39">IAS 39 Financial Instruments: Recognition and Measurement</option>
+          <option value="IAS40">IAS 40 Investment Property</option>
+          <option value="IAS41">IAS 41 Agriculture</option>
+		  <option value="IFRS 18">IFRS 18 Presentation and Disclosure in Financial Statements</option>
+       </select>
+       </td>
+  </tr>
+
+  <tr>
+  <th id ="definition-header">Definition</th>
+  <td>
+    <label for="IFRS17Definition-checkbox-1">
+      <input type="checkbox" id="IFRS17Definition-checkbox-1" name="IFRS17Definition-checkbox-1">
+      ♥It lays out guidance on preparing a complete set of finacials(Financial Performance,Financial Position,
+	  Cashflow,Changes in Equity,Notes & Comparative information.    </label>
+  </td>
+</tr>
+
+  <tr>
+  <th>Objective</th>
+  <td>
+    <label for="IFRS2Objective-checkbox-1">
+      <input type="checkbox" id="IFRS17Objective-checkbox-1" name="IFRS17Objective-checkbox-1">
+      ♥It sets out requirements for the presentation and disclosure of information in financial statements 
+	  to ensure they provide relevant information that faithfully represents an entity’s 
+	  assets, liabilities, equity, income and expenses.    </label>
+  </td>
+</tr>
+
+  <tr>
+  <th>Scope</th>
+  <td>
+    <div>
+      <label for="IFRS17Scope-checkbox-1">
+        <input type="checkbox" id="IFRS17Scope-checkbox-1" name="IFRS17Scope-checkbox-1">
+        ♥ It does not apply to the presentation and disclosure of information in 
+		condensed interim financial statements prepared applying IAS 34 Interim Financial Reporting.      </label>
+    </div>
+    <div>
+      <label for="IFRS17Scope2-checkbox-2">
+        <input type="checkbox" id="IFRS17Scope2-checkbox-2" name="IFRS17Scope2-checkbox-2">
+        ♥  Its suitable for profit-oriented entities, including public sector business entities. 
+		If entities with not-for-profit activities in the private sector or the public sector apply this Standard,
+		they may need to amend the descriptions used for particular line items, categories, subtotals or totals
+		in the financial statements.</label>
+    </div>
+    <div>
+      <label for="IFRS17Scope3-checkbox-2">
+        <input type="checkbox" id="IFRS17Scope3-checkbox-2" name="IFRS17Scope3-checkbox-2">
+        ♥ Management Financial Reviews are outside the Scope of their Standard.Also,
+		Enities without equity like Cooperatives may need to adapt the financial statement presentation
+		of members’ or unitholders’ interests.
+      </label>
+    </div>
+  </td>
+</tr>
+   
+  <tr>
+  <th>Recognition</th>
+  <td>
+    <div>
+      <label for="IFRS17Recognition-checkbox-3">
+        <input type="checkbox" id="IFRS17Recognition-checkbox-3" name="IFRS17Recognition-checkbox-3">
+       ♥ An entity shall clearly identify the financial statements and distinguish them
+	   from other information in the same published document.    </label>
+    </div>
+    <div>
+      <label for="IFRS17Recognition2-checkbox-4">
+        <input type="checkbox" id="IFRS17Recognition2-checkbox-4" name="IFRS17Recognition2-checkbox-4">
+        ♥ An entity shall give information on rounding off level,presentation currency,
+		Period Date, entity name,entity structure(Group or Individual).     </label>
+    </div>
+     <div>
+      <label for="IFRS17Recognition3-checkbox-4">
+        <input type="checkbox" id="IFRS17Recognition3-checkbox-4" name="IFRS17Recognition3-checkbox-4">
+        ♥ The frequency of reporting is recommended to be Annually or a 52 week period if some entities prefer.
+		Entities should also present a current and preceeding Period.      </label>
+    </div>
+  </td>
+</tr>
+
+  <tr>
+  <th>Measurement</th>
+  <td>
+    <div>
+      <label for="IFRS17Measurement-checkbox-2">
+        <input type="checkbox" id="IFRS17Measurement-checkbox-2" name="IFRS17Measurement-checkbox-2">
+        ♥ 	
+To provide a useful structured summary called Aggregation based on shared characteristics. 
+But ensure that it does not obscure material information.       </label>
+    </div>
+    <div>
+      <label for="IFRS17Measurement2-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement2-checkbox-3" name="IFRS17Measurement2-checkbox-3">
+        ♥ An entity shall present additional line items and subtotals if such presentations are necessary
+     </label>
+    </div>
+     <div>
+      <label for="IFRS17Measurement3-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement3-checkbox-3" name="IFRS17Measurement3-checkbox-3">
+        ♥ The entity should disclose After Period Adjustments,Reclassification methods & Amounts.
+  </label> 
+    </div>
+    <div>
+      <label for="IFRS17Measurement4-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement4-checkbox-3" name="IFRS17Measurement4-checkbox-3">
+        ♥ An Entity shall not offset Line items unless permitted. However, Measuring assets net of valuation allowances—for example,
+		obsolescence allowances on inventories and allowances for expected credit losses on financial assets—is not offsetting.     </label>
+    </div>
+<div>
+      <label for="IFRS17Measurement5-checkbox-3">
+        <input type="checkbox" id="IFRS17Measurement5-checkbox-3" name="IFRS17Measurement4-checkbox-3">
+        ♥ An Entity dealing in Investments in Joint Ventures,Associates & Subsidiaries.If Assets are accounted for using the Equity method;
+		classify them in the Investing category;else, in the Operating category.     </label>
+    </div>
+  </td>
+</tr>
+  
+  <tr>
+  <th>Presentation</th>
+  <td>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation-checkbox-2" name="IFRS17Presentation-checkbox-2">
+      <label for="IFRS17Presentation-checkbox-2">♥Present classifications of income & expenses in the Profit Or Loss in
+	  one of 5 categories(Operating,Investing,Financing,Income Taxes & Discontinued Operations.</label>
+    </div>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation1-checkbox-5" name="IFRS17Presentation1-checkbox-5">
+      <label for="IFRS17Presentation1-checkbox-5">♥Show Totals & Subtotals for operating profit or loss,
+	  	
+profit or loss before financing and income taxes & profit or loss. Also;
+for Other COmprehensive Income;whether its attributable to:(Non-Controlling Interest OR Parent Ownersip).</label>
+    </div>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation2-checkbox-6" name="IFRS17Presentation2-checkbox-6">
+      <label for="IFRS17Presentation2-checkbox-6">♥An entity can use additional line Items for clarity if those listed 
+	  donot give a clear picture of the entity's
+	  Financial position and stance.</label>
+    </div>
+    <div>
+      <input type="checkbox" id="IFRS17Presentation3-checkbox-7" name="IFRS17Presentation3-checkbox-7">
+      <label for="IFRS17Presentation3-checkbox-7">♥operating category has activities involved in producing the profit or Loss.
+	  Investing are assets that generate a return individually or collectively. 
+	  Financing involves raising capital like shares,loan and interest.</label>
+    </div>
+  </td>
+</tr>
+   
+  <tr>
+  <th>Disclosure</th>
+  <td>
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure-checkbox-2" id="IFRS17Disclosure-checkbox-2">
+      <label for="IFRS17Disclosure-checkbox-2">♥Line items in the statement of Financial Position include but not limited to:property, plant and equipment;
+	  investment property;intangible assets;
+	  goodwill;portfolios of contracts within the scope of IFRS 17 that are assets, disaggregated as required by paragraph 78 of IFRS 17;
+investments accounted for using the equity method;
+biological assets within the scope of IAS 41 Agriculture;
+inventories;
+trade and other receivables;
+cash and cash equivalents;
+the total of assets & Liabilities classified as held for sale and assets included in disposal groups classified as held for sale in accordance with IFRS 5;
+trade and other payables;
+provisions;
+liabilities and assets for current tax, as defined in IAS 12;
+deferred tax liabilities and deferred tax assets, as defined in IAS 12.
+</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure1-checkbox-9" id="IFRS17Disclosure1-checkbox-9">
+      <label for="IFRS17Disclosure1-checkbox-9">♥Notes in a Systematic manner.First;Basis of preparation;
+	  then Policies,about section & finally Length of Entity Life.</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure2-checkbox-8" id="IFRS17Disclosure2-checkbox-8">
+      <label for="IFRS17Disclosure2-checkbox-8">♥Should show if applicable the Management Defined Performance Measure:
+	  Tool used in public communication about the entity's Performance
+	  outside the traditional Financials.</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure3-checkbox-7" id="IFRS17Disclosure3-checkbox-7">
+      <label for="IFRS17Disclosure3-checkbox-7">♥Show Dividends,Rights & Preferences,Shares issued,Capital restricitions,
+	  Donations,Reserve details.</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17Disclosure4-checkbox-10" id="IFRS17Disclosure4-checkbox-10">
+      <label for="IFRS17Disclosure4-checkbox-10">♥Material information about key non financial events that has a key effect on the Financials
+	  like the departure of a key member,ally or customer.</label>
+    </div>
+  </td>
+</tr>
+  
+  <tr>
+  <th>(Any Other Issue)</th>
+  <td>
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue-checkbox-2" id="IFRS17AnyOtherIssue-checkbox-2">
+      <label for="IFRS17AnyOtherIssue-checkbox-2">♥For a change in use of an Asset,an Entity should 
+	  reclassify it from Investing to Operating Category.</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue1-checkbox-2" id="IFRS17AnyOtherIssue1-checkbox-2">
+      <label for="IFRS17AnyOtherIssue1-checkbox-2">♥An Entity that provides Financing Activites should classify its income & expenses
+	  under the Operating Category.</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue2-checkbox-2" id="IFRS17AnyOtherIssue2-checkbox-2">
+      <label for="IFRS17AnyOtherIssue2-checkbox-2">♥An entity shall classify foreign exchange differences included in the PorL 
+	  applying IAS 21 in the same category as the income and expenses from the 
+	  items that gave rise to the foreign exchange differences, unless doing so would involve undue cost or effort.</label>
+    </div>
+
+    <div>
+      <input type="checkbox" name="IFRS17AnyOtherIssue3-checkbox-2" id="IFRS17AnyOtherIssue3-checkbox-2">
+      <label for="IFRS17AnyOtherIssue3-checkbox-2">♥An entity shall apply this Standard for on or after 1 January 2027.
+	  Earlier application is permitted.This Standard supersedes IAS 1</label>
+    </div>
+  </td>
+</tr> 
+
+    <tr>
+      <th>Conclusion/Decision:</th>
+      <td>
+        <textarea id="conclusion-field2" rows="2" cols="30"></textarea>
+      </td>
+    </tr>
+    
+  </table>
+    
+    <progress id="progress-bar2" value="0" max="0" label for = "APPLICATION"></progress>
+   
+     
+   <td>
+    <button onclick="clearForm2()">Clear Forms</button>
+    <button onclick="printAsPDF2()">Save as PDFs</button>
+
+    </td>
+
+<script>
+function printAsPDF2() {
+  // Set the page to print in landscape orientation
+  var printOptions = {
+    orientation: "landscape"
+  };
+  
+  // Print the current page as a PDF
+  window.print();
+}
+</script>
+ 
+ <script>
+  function checkKeywords() {
+    const detailsTextarea = document.getElementById('details-textarea2');
+    const checkboxes = {
+      definition: document.getElementById('IFRS17Definition-checkbox-1'),
+      objective: document.getElementById('IFRS17Objective-checkbox-1'),
+      scope: document.getElementById('IFRS17Scope-checkbox-1'),
+      scope2: document.getElementById('IFRS17Scope2-checkbox-2'),
+      scope3: document.getElementById('IFRS17Scope3-checkbox-2'),
+      recognition: document.getElementById('IFRS17Recognition-checkbox-3'),
+      recognition2: document.getElementById('IFRS17Recognition2-checkbox-4'),
+      recognition3: document.getElementById('IFRS17Recognition3-checkbox-4'),
+      measurement: document.getElementById('IFRS17Measurement-checkbox-2'),
+      measurement2: document.getElementById('IFRS17Measurement2-checkbox-3'),
+      measurement3: document.getElementById('IFRS17Measurement3-checkbox-3'),
+      measurement4: document.getElementById('IFRS17Measurement4-checkbox-3'),
+      measurement5: document.getElementById('IFRS17Measurement5-checkbox-3'),
+      presentation: document.getElementById('IFRS17Presentation-checkbox-2'),
+      presentation1: document.getElementById('IFRS17Presentation1-checkbox-5'),
+      presentation2: document.getElementById('IFRS17Presentation2-checkbox-6'),
+      presentation3: document.getElementById('IFRS17Presentation3-checkbox-7'),
+      disclosure: document.getElementById('IFRS17Disclosure-checkbox-2'),
+      disclosure1: document.getElementById('IFRS17Disclosure1-checkbox-9'),
+      disclosure2: document.getElementById('IFRS17Disclosure2-checkbox-8'),
+      disclosure3: document.getElementById('IFRS17Disclosure3-checkbox-7'),
+      disclosure4: document.getElementById('IFRS17Disclosure4-checkbox-10'),
+      anyOtherIssue: document.getElementById('IFRS17AnyOtherIssue-checkbox-2'),
+      anyOtherIssue1: document.getElementById('IFRS17AnyOtherIssue1-checkbox-2'),
+      anyOtherIssue2: document.getElementById('IFRS17AnyOtherIssue2-checkbox-2'),
+      anyOtherIssue3: document.getElementById('IFRS17AnyOtherIssue3-checkbox-2'),
+    };
+
+    const keywords = {
+      definition: ['Complete', 'Set', 'Preparing'],
+      objective: ['Faithfully', 'Represents', 'requirements'],
+      scope: [ 'Interim','IAS34'],
+      scope2: ['profit-oriented'],
+      scope3: ['Management Financial Reviews', 'Cooperatives', 'without equity'],
+      recognition: ['identify', 'distinguish', 'published'],
+      recognition2: ['rounding', 'presentation currency', 'structure'],
+      recognition3: ['Annually', 'frequency', '52 week'],
+      measurement: ['Aggregation','material', 'characteristics', 'shared'],
+      measurement2: ['additional', 'line items', 'subtotals'],
+      measurement3: ['Reclassification', 'After Period Adjustments'],
+      measurement4: ['not offset', 'expected credit losses'],
+      measurement5: ['Equity method'],
+      presentation: ['classifications of income & expenses', 'categories', 'in one of'],
+      presentation1: ['Totals & Subtotals ', 'attributable to'],
+      presentation2: ['additional line Items', 'clear picture'],
+      presentation3: ['producing', 'raising capital'],
+      disclosure: ['include but not limited to'],
+      disclosure1: ['Systematic'],
+      disclosure2: ['Management Defined Performance Measure'],
+      disclosure3: ['Show details'],
+      disclosure4: ['key non financial events', 'key effect on the Financials'],
+      anyOtherIssue: ['change in use of an Asset', 'reclassify it', 'Investing to Operating'],
+      anyOtherIssue1: ['provides Financing','under the Operating'],
+      anyOtherIssue2: ['classify foreign exchange differences'],
+      anyOtherIssue3: ['on or after', '1 Earlier application is permitted', 'supersedes IAS 1'],
+    };
+
+    const enteredText = detailsTextarea.value.toLowerCase();
+
+    // Function to check if any keyword is present in the entered text
+    function checkKeywordPresence(checkbox, keywordArray) {
+      checkbox.checked = keywordArray.some(keyword => enteredText.includes(keyword.toLowerCase()));
+    }
+
+    checkKeywordPresence(checkboxes.definition, keywords.definition);
+    checkKeywordPresence(checkboxes.objective, keywords.objective);
+    checkKeywordPresence(checkboxes.scope, keywords.scope);
+    checkKeywordPresence(checkboxes.scope2, keywords.scope2);
+    checkKeywordPresence(checkboxes.scope3, keywords.scope3);
+    checkKeywordPresence(checkboxes.recognition, keywords.recognition);
+    checkKeywordPresence(checkboxes.recognition2, keywords.recognition2);
+    checkKeywordPresence(checkboxes.recognition3, keywords.recognition3);
+    checkKeywordPresence(checkboxes.measurement, keywords.measurement);
+    checkKeywordPresence(checkboxes.measurement2, keywords.measurement2);
+    checkKeywordPresence(checkboxes.measurement3, keywords.measurement3);
+    checkKeywordPresence(checkboxes.measurement4, keywords.measurement4);
+    checkKeywordPresence(checkboxes.measurement5, keywords.measurement5);
+    checkKeywordPresence(checkboxes.presentation, keywords.presentation);
+    checkKeywordPresence(checkboxes.presentation1, keywords.presentation1);
+    checkKeywordPresence(checkboxes.presentation2, keywords.presentation2);
+    checkKeywordPresence(checkboxes.presentation3, keywords.presentation3);
+    checkKeywordPresence(checkboxes.disclosure, keywords.disclosure);
+    checkKeywordPresence(checkboxes.disclosure1, keywords.disclosure1);
+    checkKeywordPresence(checkboxes.disclosure2, keywords.disclosure2);
+    checkKeywordPresence(checkboxes.disclosure3, keywords.disclosure3);
+    checkKeywordPresence(checkboxes.disclosure4, keywords.disclosure4);
+    checkKeywordPresence(checkboxes.anyOtherIssue, keywords.anyOtherIssue);
+    checkKeywordPresence(checkboxes.anyOtherIssue1, keywords.anyOtherIssue1);
+    checkKeywordPresence(checkboxes.anyOtherIssue2, keywords.anyOtherIssue2);
+    checkKeywordPresence(checkboxes.anyOtherIssue3, keywords.anyOtherIssue3);
+  }
+</script>
+
+
+<style>
+  /* Add CSS styles for the progress bar */
+  progress {
+    width: 300px;
+  }
+
+  progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 4px;
+  }
+
+  progress::-webkit-progress-value {
+    background-color: red; /* Change progress bar color to red */
+    border-radius: 4px;
+  }
+
+  progress::-moz-progress-bar {
+    background-color: red; /* Change progress bar color to red */
+    border-radius: 4px;
+  }
+
+  /* Add CSS styles for the numbers/digits beside the progress bar */
+  .progress-label {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-left: 5px;
+  }
+</style>
+
+<script>
+
+ document.addEventListener('DOMContentLoaded', function() {
+    // Progress bar
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const progressBar = document.getElementById('progress-bar2');
+    const progressLabel = document.createElement('span');
+    progressLabel.classList.add('progress-label');
+    progressBar.insertAdjacentElement('afterend', progressLabel);
+    let checkedCount = 0;
+
+    checkboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+    if (this.checked || this.getAttribute('data-autochecked')) {
+      checkedCount += this.checked ? 1 : -1;
+    }
+    updateProgressBar();
+    updateConclusionField();
+  });
+
+  // Check the initial state of checkboxes
+  if (checkbox.checked || checkbox.getAttribute('data-autochecked')) {
+    checkedCount++;
+  }
+    });
+
+    function updateProgressBar() {
+      let checkedCheckboxCount = 0;
+  checkboxes.forEach(function(checkbox) {
+    if (checkbox.checked || checkbox.getAttribute('data-autochecked')) {
+      checkedCheckboxCount++;
+    }
+  });
+
+  progressBar.value = checkedCheckboxCount;
+  progressBar.max = checkboxes.length;
+  const percentage = (checkedCheckboxCount / checkboxes.length) * 100;
+  progressLabel.textContent = `${checkedCheckboxCount} / ${checkboxes.length} (${percentage.toFixed(2)}%)`;
+    }
+
+    const detailsTextarea = document.getElementById('details-textarea2');
+    detailsTextarea.addEventListener('input', function() {
+      if (this.value.trim().toLowerCase() !== '') {
+        checkedCount++;
+        this.setAttribute('data-autochecked', 'true');
+        this.checked = true; // Check the checkbox
+      } else {
+        checkedCount--;
+        this.removeAttribute('data-autochecked');
+      }
+      updateProgressBar();
+      updateConclusionField();
+    });
+
+    function updateConclusionField() {
+ 
+  const conclusionField = document.getElementById('conclusion-field2');
+  const checkedCheckboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+  if (checkedCheckboxes.length >= 13) {
+    conclusionField.value = 'IFRS 18 has been correctly applied.';
+  } else {
+    conclusionField.value = 'IFRS 18 has not been correctly applied.';
+  }
+}
+
+    // Set the default value of the conclusion field
+    const conclusionField = document.getElementById('conclusion-field2');
+    conclusionField.value = 'IFRS 18 has not been correctly applied.';
+
+    // Clear form
+    function clearForm() {
+      checkboxes.forEach(function(checkbox) {
+        checkbox.checked = false;
+      });
+
+      const textareas = document.querySelectorAll('textarea');
+      textareas.forEach(function(textarea) {
+        textarea.value = '';
+      });
+
+      checkedCount = 0;
+      updateProgressBar();
+      updateConclusionField();
+    }
+
+    // Update progress bar and conclusion field initially
+    updateProgressBar();
+    updateConclusionField();
+  });
+</script>
+
+<script>
+<keyword-field id="keyword-field">
+keyword-field = ['Complete', 'Set', 'Preparing',
+'Faithfully', 'Represents', 'requirements',
+'Interim','IAS34',
+'profit-oriented',
+'Management Financial Reviews', 'Cooperatives', 'without equity',
+'identify', 'distinguish', 'published',
+''rounding', 'presentation currency', 'structure',
+''Annually', 'frequency', '52 week',
+'Aggregation','material', 'characteristics', 'shared',
+'additional', 'line items', 'subtotals',
+'Reclassification', 'After Period Adjustments',
+'not offset', 'expected credit losses',
+'Equity method',
+'classifications of income & expenses', 'categories', 'in one of',
+'Totals & Subtotals ', 'attributable to',
+'additional line Items', 'clear picture',
+'producing', 'raising capital',
+'include but not limited to',
+'Systematic',
+'Management Defined Performance Measure',
+'Show details',
+'key non financial events', 'key effect on the Financials',
+'change in use of an Asset', 'reclassify it', 'Investing to Operating',
+'provides Financing','under the Operating',
+'classify foreign exchange differences',
+'on or after', '1 Earlier application is permitted', 'supersedes IAS 1']
+ 
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const checkboxes = [
+        {
+          id: 'IFRS2Definition-checkbox-1',
+          keywords: ['Complete', 'Set', 'Preparing']
+        },
+        {
+          id: 'IFRS2Objective-checkbox-1',
+          keywords: ['Faithfully', 'Represents', 'requirements']
+        },
+        {
+          id: 'IFRS2Scope-checkbox-1',
+          keywords: [ 'Interim','IAS34']
+        },
+        {
+          id: 'IFRS2Scope2-checkbox-2',
+          keywords: ['profit-oriented']
+        },
+        {
+          id: 'IFRS2Scope3-checkbox-2',
+          keywords: ['Management Financial Reviews', 'Cooperatives', 'without equity']
+        },
+        {
+          id: 'IFRS2Recognition-checkbox-3',
+          keywords: ['identify', 'distinguish', 'published']
+        },
+        {
+          id: 'IFRS2Recognition2-checkbox-4',
+          keywords: ['rounding', 'presentation currency', 'structure']
+        },
+        {
+          id: 'IFRS2Recognition3-checkbox-4',
+          keywords: ['Annually', 'frequency', '52 week']
+        },
+        {
+          id: 'IFRS2Measurement-checkbox-2',
+          keywords: ['Aggregation','material', 'characteristics', 'shared']
+        },
+        {
+          id: 'IFRS2Measurement2-checkbox-3',
+          keywords: ['additional', 'line items', 'subtotals']
+        },
+        {
+          id: 'IFRS2Measurement3-checkbox-3',
+          keywords: ['Reclassification', 'After Period Adjustments']
+        },
+        {
+          id: 'IFRS2Measurement4-checkbox-3',
+          keywords: ['not offset', 'expected credit losses']
+        },
+        {
+          id: 'IFRS2Measurement5-checkbox-3',
+          keywords: ['Equity method']
+        },
+        {
+          id: 'IFRS2Presentation-checkbox-2',
+          keywords: ['classifications of income & expenses', 'categories', 'in one of']
+        },
+        {
+          id: 'IFRS2Presentation1-checkbox-5',
+          keywords: ['Totals & Subtotals ', 'attributable to']
+        },
+        {
+          id: 'IFRS2Presentation2-checkbox-6',
+          keywords: ['additional line Items', 'clear picture']
+        },
+        {
+          id: 'IFRS2Presentation3-checkbox-7',
+          keywords: ['producing', 'raising capital']
+        },
+        {
+          id: 'IFRS2Disclosure-checkbox-2',
+          keywords: ['include but not limited to']
+        },
+        {
+          id: 'IFRS2Disclosure1-checkbox-9',
+          keywords: ['Systematic']
+        },
+        {
+          id: 'IFRS2Disclosure2-checkbox-8',
+          keywords: ['Management Defined Performance Measure']
+        },
+        {
+         id: 'IFRS2Disclosure3-checkbox-10',
+          keywords: ['Show details']
+        },
+
+       {
+         id: 'IFRS2Disclosure4-checkbox-10',
+          keywords: ['key non financial events', 'key effect on the Financials']
+
+        },
+
+        {   
+         id: 'IFRS2AnyOtherIssue-checkbox-2',
+          keywords: ['change in use of an Asset', 'reclassify it', 'Investing to Operating']
+
+        },
+
+       {   
+         id: 'IFRS2AnyOtherIssue1-checkbox-2',
+          keywords: ['provides Financing','under the Operating']
+
+        },
+
+       {   
+         id: 'IFRS2AnyOtherIssue2-checkbox-2',
+          keywords: ['classify foreign exchange differences']
+
+        },
+        
+        {   
+         id: 'IFRS2AnyOtherIssue3-checkbox-2',
+          keywords: ['on or after', '1 Earlier application is permitted', 'supersedes IAS 1']
+
+        },
+     
+      ];
+
+      const detailsTextarea = document.getElementById('details-textarea2');
+  const progressBar = document.getElementById('progress-bar2'); // Update ID to match the HTML element
+  const progressLabel = document.querySelector('.progress-label'); // Update selector to match the HTML element
+  const conclusionField = document.getElementById('conclusion-field2'); // Update ID to match the HTML element
+  let checkedCount = 0;
+  let checkedKeywords = new Set();
+
+  checkboxes.forEach(function(checkbox) {
+    const { id } = checkbox;
+    const checkboxElement = document.getElementById(id);
+
+    checkboxElement.addEventListener('change', function() {
+      const keyword = checkbox.keywords[0]; // Assuming only one keyword per checkbox
+
+      if (this.checked) {
+        checkedKeywords.add(keyword);
+        checkedCount++;
+      } else {
+        checkedKeywords.delete(keyword);
+        checkedCount--;
+      }
+
+      const progressPercentage = Math.min(Math.round((checkedCount / checkboxes.length) * 100), 100);
+      progressBar.value = checkedCount;
+      progressBar.max = checkboxes.length;
+      progressLabel.textContent = `${checkedCount} / ${checkboxes.length} (${progressPercentage.toFixed(2)}%)`;
+
+      updateConclusion();
+    });
+  });
+
+  function updateConclusion() {
+    if (checkedCount >= 13) {
+      conclusionField.value = 'IFRS 18 has been correctly applied.';
+    } else {
+      conclusionField.value = 'IFRS 18 has not been correctly applied.';
+    }
+  }
+
+  detailsTextarea.addEventListener('input', function() {
+    const enteredText = this.value.toLowerCase();
+
+    checkboxes.forEach(function(checkbox) {
+      const { id } = checkbox;
+      const checkboxElement = document.getElementById(id);
+
+      const matchedKeywords = checkbox.keywords.filter(function(keyword) {
+        return enteredText.includes(keyword.toLowerCase());
+      });
+
+      if (matchedKeywords.length > 0) {
+        checkboxElement.checked = true;
+        checkedKeywords.add(matchedKeywords[0]);
+      } else {
+        checkboxElement.checked = false;
+        checkedKeywords.delete(checkbox.keywords[0]);
+      }
+    });
+
+    checkedCount = checkedKeywords.size;
+
+    const progressPercentage = Math.min(Math.round((checkedCount / checkboxes.length) * 100), 100);
+    progressBar.value = checkedCount;
+    progressBar.max = checkboxes.length;
+    progressLabel.textContent = `${checkedCount} / ${checkboxes.length} (${progressPercentage.toFixed(2)}%)`;
+
+    updateConclusion();
+  });
+});
+  </script>
+
+</div>
+
+<script>
+  function openTab(evt, tabName) {
+    evt.preventDefault(); // Prevent form submission
+    
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+</script>
+</form>
+
+</body>
+</html>
